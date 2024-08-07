@@ -1,0 +1,56 @@
+﻿<Window
+    x:Class="InitDataBaseTool.Views.MainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:InitDataBaseTool.Views"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="clr-namespace:InitDataBaseTool.Models"
+    xmlns:prism="http://prismlibrary.com/"
+    Title="{Binding Title}"
+    Width="1200"
+    Height="850"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <model:MenuList x:Key="menuList" />
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+        <StackPanel
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Orientation="Horizontal">
+            <Button
+                Width="200"
+                Margin="0,0,20,0"
+                Command="{Binding OpenLocalDataBaseCommand}"
+                CommandParameter="{Binding Title}">
+                <Button.Content>
+                    <TextBlock Text="{Binding Title, StringFormat=连接{0}}"/>
+                </Button.Content>
+            </Button>
+            <ComboBox Width="200" SelectedItem="{Binding SelectedItemObject}" ItemsSource="{Binding TableList}"  />
+            <Button
+                Width="200"
+                Margin="20,0,20,0"
+                Command="{Binding OpenConnCommand}"
+                Content="测试连接" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" DataContext="{Binding Source={StaticResource menuList}}">
+            <ListBox IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="2">
+            <Button Command="{Binding BackServerViewCommand}" Content="回退" />
+        </StackPanel>
+    </Grid>
+</Window>

@@ -19,7 +19,8 @@
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition />
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition />
             <RowDefinition Height="40" />
         </Grid.RowDefinitions>
@@ -49,7 +50,9 @@
             <ListBox IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" />
         </StackPanel>
 
-        <StackPanel Grid.Row="2">
+        
+        
+        <StackPanel Grid.Row="3">
             <Button Command="{Binding BackServerViewCommand}" Content="回退" />
         </StackPanel>
     </Grid>

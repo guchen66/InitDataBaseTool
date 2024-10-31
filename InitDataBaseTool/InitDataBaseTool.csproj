@@ -140,6 +140,8 @@
     <Compile Include="ViewModels\Dialogs\ConnSqlserverSetDialogViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\SelectServerViewModel.cs" />
+    <Compile Include="ViewModels\Tables\AllTableViewModel.cs" />
+    <Compile Include="ViewModels\Tables\SelectedTableItemViewModel.cs" />
     <Compile Include="Views\Dialogs\ConnMysqlSetDialog.xaml.cs">
       <DependentUpon>ConnMysqlSetDialog.xaml</DependentUpon>
     </Compile>
@@ -156,6 +158,12 @@
     <Compile Include="Views\SelectServerView.xaml.cs">
       <DependentUpon>SelectServerView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Tables\AllTableView.xaml.cs">
+      <DependentUpon>AllTableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tables\SelectedTableItemView.xaml.cs">
+      <DependentUpon>SelectedTableItemView.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\Dialogs\ConnMysqlSetDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -169,6 +177,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\SelectServerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Tables\AllTableView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Tables\SelectedTableItemView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
